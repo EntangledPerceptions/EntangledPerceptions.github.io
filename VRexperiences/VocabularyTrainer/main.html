@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item
+          id="enviroment"
+          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/RamenAndNoodles/assets/main/enviroments.gltf"
+        ></a-asset-item>
+        <img
+          id="warning"
+          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/RamenAndNoodles/assets/main/general-warning-sign-10836-1.jpg"
+        />
+      </a-assets>
+
+      <a-entity
+        position="0 0.35 -1.2"
+        rotation="0 -90 0"
+        gltf-model="#enviroment"
+      ></a-entity>
+
+      <a-image
+        position="1.332 1.356 -2.247"
+        scale="0.2 0.2 0.2"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #FridgeText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #FridgeText; visible: false"
+      >
+        <a-text
+          id="FridgeText"
+          value="Fridge"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="-1.75 1.7 -0.699"
+        rotation="0 90 0"
+        scale="0.2 0.2 0.2"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #WallText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #WallText; visible: false"
+      >
+        <a-text
+          id="WallText"
+          value="Wall"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="0.054 1.67 -2.7"
+        scale="0.15 0.15 0.15"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #PanText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #PanText; visible: false"
+      >
+        <a-text
+          id="PanText"
+          value="Pan"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="-0.92 1.35 -0.7"
+        scale="0.2 0.2 0.2"
+        rotation="90 90 180"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #StoveText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #StoveText; visible: false"
+      >
+        <a-text
+          id="StoveText"
+          value="Stove"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.563 -0.256"
+          rotation="90 180 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="-0.68 0.87 -0.94"
+        rotation="0 90 0"
+        scale="0.2 0.2 0.2"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #CupboardText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #CupboardText; visible: false"
+      >
+        <a-text
+          id="CupboardText"
+          value="Cupboard"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="-0.474 0.877 0.3"
+        rotation="0 90 0"
+        scale="0.2 0.2 0.2"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #BinText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #BinText; visible: false"
+      >
+        <a-text
+          id="BinText"
+          value="Bin"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-image
+        position="-0.205 0.763 -1.878"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        src="#warning"
+        event-set__enter="_event: mouseenter; _target: #Bin2Text; visible: true"
+        event-set__leave="_event: mouseleave; _target: #Bin2Text; visible: false"
+      >
+        <a-text
+          id="Bin2Text"
+          value="Bin"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 0.9 0"
+          width="15"
+        ></a-text>
+      </a-image>
+
+      <a-sky color="#c2c08e"></a-sky>
+
+      <a-camera>
+        <a-cursor color="ffffff"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

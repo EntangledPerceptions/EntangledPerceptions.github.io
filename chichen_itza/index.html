@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene vr-mode-ui="enabled: false">
+      <a-assets>
+        <a-asset-item
+          id="Pyramid"
+          src="https://arjs-cors-proxy.herokuapp.com/https://rawcdn.githack.com/carlos1212247/nft/a3d3818a51be13fbd10a2fb6513a8519b7efd65a/assets/chichen.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="texture"
+          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Aztec_Map.png"
+        ></a-asset-item>
+        <a-asset-item
+          id="foliage"
+          src="https://arjs-cors-proxy.herokuapp.com/https://rawcdn.githack.com/carlos1212247/nft/a3d3818a51be13fbd10a2fb6513a8519b7efd65a/assets/chichenTrees.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        id="main light"
+        light="type: directional; color: #fff; castShadow: true"
+        position="-12 28 20"
+      ></a-entity>
+
+      <a-entity
+        id="Chichen"
+        position="0 0 0"
+        scale="1 1 1"
+        gltf-model="#Pyramid"
+        material="normalMap: #texture; color: #fff"
+      ></a-entity>
+
+      <a-entity id="landscape" gltf-model="#foliage"></a-entity>
+
+      <a-entity
+        environment="skyType: gradient; ground: hills; groundYScale: 7; groundColor: #2b6226; groundColor2: #215635; groundTexture: walkernoise; playArea: 0.8; skyColor: #ff7361"
+      ></a-entity>
+
+      <a-entity
+        id="sun"
+        position="-60.51 44 -67.98"
+        scale="16.665 16.665 16.665"
+        geometry="primitive: sphere"
+        material="color: #ffefb9; shader: flat; fog: false"
+        light="type: hemisphere; color: #ff996c; groundColor: #ffbc9a; decay: 0.79; distance: 5"
+      ></a-entity>
+
+      <a-camera position="5 3 48"></a-camera>
+    </a-scene>
+  </body>
+</html>

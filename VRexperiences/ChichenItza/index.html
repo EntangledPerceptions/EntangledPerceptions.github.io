@@ -9,130 +9,20 @@
     <a-scene fog="color: #b0af83">
       <a-assets>
         <a-asset-item
-          id="floor"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/LandscapeD4.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="tree1"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Trees1.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="tree2"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Trees2.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="tree3"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Trees3.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="tree4"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Trees4.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="tree5"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Trees5.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="Pyramid"
-          src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carlos1212247/nft/main/assets/Chichen.gltf"
+          id="room"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/chichen_itza.glb"
         ></a-asset-item>
       </a-assets>
 
-      <a-entity id="Ground" position="0 0.327 0" gltf-model="#floor"></a-entity>
       <a-entity
-        id="Tree_1"
-        gltf-model="#tree1"
-        position="-22 0.9 24.2"
-        rotation="-180 89.694 -180"
-        scale="0.351 0.351 0.351"
-      ></a-entity>
-      <a-entity
-        id="Tree_1_2"
-        position="25.3 0.64 9.5"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree1"
-      ></a-entity>
-      <a-entity
-        id="Tree_2"
-        position="9.814 0.776 0.76"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree2"
-      ></a-entity>
-      <a-entity
-        id="Tree_3"
-        position="-6.75281 -0.615 -18.06424"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree3"
-      ></a-entity>
-      <a-entity
-        id="Tree_4"
-        position="-9.74722 -0.029 -17.88304"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree4"
-      ></a-entity>
-      <a-entity
-        id="Tree_5"
-        position="-6.128 0.85 -0.65224"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree5"
-      ></a-entity>
-      <a-entity
-        id="Tree_2_1"
-        position="13.397 0.00 18.923"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree2"
-      ></a-entity>
-      <a-entity
-        id="Tree_3_1"
-        position="15.714 0.924 17.210"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree3"
-      ></a-entity>
-      <a-entity
-        id="Tree_4_1"
-        position="-21.85 0 -0.905"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree4"
-      ></a-entity>
-      <a-entity
-        id="Tree_5_1"
-        position="-19.29 0 6.665"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree5"
-      ></a-entity>
-      <a-entity
-        id="Tree_1_3"
-        position="-19.98 0 -13.74"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree1"
-      ></a-entity>
-      <a-entity
-        id="Tree_2_2"
-        position="14.657 0 4.853"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree2"
-      ></a-entity>
-      <a-entity
-        id="Tree_3_2"
-        position="-12.66 0 -12.63"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree3"
-      ></a-entity>
-      <a-entity
-        id="Tree_4_2"
-        position="17.534 0 -4.469"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree4"
-      ></a-entity>
-      <a-entity
-        id="Tree_5_2"
-        position="-3.336 0 6.673"
-        scale="0.3 0.3 0.3"
-        gltf-model="#tree5"
+        id="Vroom"
+        position="0 0.3 0.3"
+        scale="1 1 1"
+        gltf-model="#room"
       ></a-entity>
 
       <a-entity
-        environment="preset: forest; playArea: 1.25; seed: 3; fog: 0.8; groundYScale: 42; dressingAmount: 200; flatShading: true; ground: hills; groundTexture: walkernoise; dressingColor: #4f613d; skyType: gradient; skyColor: #ff7361"
+        environment="preset: forest; playArea: 1.25; seed: 3; fog: 0.8; groundYScale: 42; dressingAmount: 2; flatShading: false; ground: hills; dressingColor: #4f613d; skyType: gradient; skyColor: #ff7361"
       ></a-entity>
 
       <a-entity
@@ -144,14 +34,8 @@
         light="type: hemisphere; color: #ff996c; groundColor: #ffbc9a; decay: 0.79; distance: 5"
       ></a-entity>
 
-      <a-entity
-        id="Chichen"
-        position="-0.5 0 -29.12"
-        scale="1 1 1"
-        gltf-model="#Pyramid"
-      ></a-entity>
-
-      <a-camera position="0 3.93 19.73"></a-camera>
+      <a-camera position="-39.5 2.5 55.7"></a-camera>
     </a-scene>
   </body>
 </html>
+

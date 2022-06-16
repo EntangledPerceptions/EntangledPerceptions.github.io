@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+      gesture-detector
+    >
+      <a-assets>
+        <img
+          id="celltxt"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/CellTex2.jpg"
+        />
+        <a-asset-item
+          id="uro"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/urotelial.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="nombre"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/nombre.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-marker
+        id="marker"
+        type="pattern"
+        preset="custom"
+        smooth="true"
+        url="https://arjs-cors-proxy.herokuapp.com/https://privatecdn.stdcdn.com/pattern-Marker1_draft.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          id="figura"
+          scale="1.3 1.3 1.3"
+          class="clickable"
+          gesture-handler
+        >
+          <a-entity
+            id="outer"
+            geometry="primitive: cylinder; segmentsRadial: 6"
+            scale="1.382 0.29 1"
+            material="side: double; color: #204a87; transparent: true; opacity: 0.5"
+          >
+          </a-entity>
+
+          <a-entity
+            id="inner"
+            geometry="primitive: cylinder; segmentsRadial: 6"
+            scale="1.277 0.268 0.924"
+            material="color: #cc91d9; src: #celltxt"
+          >
+          </a-entity>
+
+          <a-entity
+            id="circle1"
+            position="-0.470 0.165 -0.063"
+            rotation="-90 0 0"
+            scale="0.184 0.184 0.184"
+            geometry="primitive: circle"
+            material="roughness: 1; side: double; color: #562374; blending: substractive; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="circle2"
+            position="-0.328 0.165 0.316"
+            rotation="-90 0 0"
+            scale="0.230 0.230 0.230"
+            geometry="primitive: circle"
+            material="roughness: 1; side: double; color: #562374; blending: substractive; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="ring1"
+            position="-0.476 0.167 -0.066"
+            rotation="-90 0 0"
+            scale="0.206 0.206 0.206"
+            geometry="primitive: ring; radiusInner: 0.85; radiusOuter: 0.93"
+            material="roughness: 1; side: double; color: #c24436; blending: additive; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="ring2"
+            position="-0.326 0.167 0.324"
+            rotation="-90 0 0"
+            scale="0.250 0.250 0.250"
+            geometry="primitive: ring; radiusInner: 0.85; radiusOuter: 0.93"
+            material="roughness: 1; side: double; color: #c24436; blending: additive; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="minicircle1"
+            position="-0.543 0.169 -0.101"
+            rotation="-90 0 0"
+            scale="0.049 0.0385 0.0385"
+            geometry="primitive: circle; radius: 0.5"
+            material="roughness: 1; side: double; color: #a81c34; blending: multiply; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="minicircle2"
+            position="-0.501 0.169 -0.107"
+            rotation="-90 -69.711 0"
+            scale="0.0385 0.0535 0.0385"
+            geometry="primitive: circle; radius: 0.5"
+            material="roughness: 1; side: double; color: #a81c34; blending: multiply; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="minicircle3"
+            position="-0.268 0.169 0.305"
+            rotation="-90 10.675 0"
+            scale="0.0385 0.0635 0.0385"
+            geometry="primitive: circle; radius: 0.5"
+            material="roughness: 1; side: double; color: #a81c34; blending: multiply; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="minicircle4"
+            position="-0.241 0.169 0.343"
+            rotation="-90 52.162 0"
+            scale="0.0495 0.0385 0.0385"
+            geometry="primitive: circle; radius: 0.5"
+            material="roughness: 1; side: double; color: #a81c34; blending: multiply; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="label1"
+            position="0 0 1.315"
+            rotation="0 0 0"
+            scale="3.286 3.286 3.286"
+            gltf-model="#uro"
+          ></a-entity>
+          <a-entity
+            id="label2"
+            position="0.627 0 1.605"
+            rotation="0 0 0"
+            scale="1.429 1.429 1.429"
+            gltf-model="#nombre"
+          ></a-entity>
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

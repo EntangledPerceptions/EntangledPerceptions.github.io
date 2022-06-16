@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+      gesture-detector
+    >
+      <!-- inicio de asset manager -->
+      <a-assets>
+        <a-asset-item
+          id="room"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/Celulas_test1.gltf"
+        ></a-asset-item>
+        <img
+          id="celltxt"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/CellTex2.jpg"
+        />
+        <a-asset-item
+          id="trichu"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/trichuris.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="nombre"
+          src="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/nombre.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <!-- inicio de MARCADOR -->
+      <a-marker
+        id="marker"
+        type="pattern"
+        preset="custom"
+        smooth="true"
+        url="https://entangled-cors.herokuapp.com/https://privatecdn.stdcdn.com/pattern-Marker1_draft.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <!-- TOUCH HANDLER -->
+        <a-entity
+          id="figura"
+          scale="1.3 1.3 1.3"
+          class="clickable"
+          gesture-handler
+        >
+          <!-- inicio de EXPERIENCIA -->
+          <a-entity
+            id="cell"
+            position="-0.004 0.219 0.275"
+            rotation="0 -0.665 0"
+            scale="0.929 0.164 0.421"
+            geometry="primitive: sphere"
+            material="side: double; color: #6a6c20; transparent: true; opacity: 0.5"
+          ></a-entity>
+          <a-entity
+            id="core"
+            position="-0.044 0.230 0.256"
+            scale="0.789 0.086 0.350"
+            geometry="primitive: sphere"
+            material="side: double; transparent: false; color: #d7e067; src: #celltxt"
+          ></a-entity>
+          <a-entity
+            id="ear1"
+            position="0.734 0.225 0.309"
+            scale="0.154 0.030 0.154"
+            geometry="primitive: sphere"
+            material="side: double; color: #6a6c20; transparent: false"
+          ></a-entity>
+          <a-entity
+            id="Vroom"
+            position="0 0.225 0.3"
+            rotation="0 -1.282 0"
+            scale="0.5 0.5 0.5"
+            gltf-model="#room"
+            material="transparent: true; opacity: 0.5"
+          ></a-entity>
+          <a-entity
+            id="ear2"
+            position="-0.768 0.225 0.295"
+            scale="0.131 0.035 0.134"
+            geometry="primitive: sphere"
+            material="side: double; color: #6a6c20; transparent: false"
+          ></a-entity>
+          <a-entity
+            id="label1"
+            position="0.159 0.248 0.847"
+            rotation="0 0 0"
+            scale="1.488 1.488 1.488"
+            gltf-model="#trichu"
+          ></a-entity>
+          <a-entity
+            id="label2"
+            position="0.167 00.254 1.029"
+            rotation="0 0 0"
+            scale="1 1 1"
+            gltf-model="#nombre"
+          ></a-entity>
+          <!-- fin de experiencia -->
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

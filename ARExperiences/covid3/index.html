@@ -1,1 +1,174 @@
-template
+<!DOCTYPE html>
+
+<!-- POSTER COVID 3 -->
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      loading-screen="enabled: true;"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+    >
+      <!-- asset manager -->
+
+      <a-assets>
+        <audio
+          id="audio5"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/manos.mp3"
+          preload="auto"
+        ></audio>
+
+        <img
+          id="sprite5_1"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_1.png"
+        />
+        <img
+          id="sprite5_2"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_2.png"
+        />
+        <img
+          id="sprite5_3"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_3.png"
+        />
+        <img
+          id="sprite5_4"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_4.png"
+        />
+        <img
+          id="sprite5_5"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_5.png"
+        />
+        <img
+          id="sprite5_6"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_6.png"
+        />
+        <img
+          id="sprite5_7"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_7.png"
+        />
+        <img
+          id="sprite5_8"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_8.png"
+        />
+        <img
+          id="sprite5_9"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_9.png"
+        />
+        <img
+          id="sprite5_10"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite5_10.png"
+        />
+      </a-assets>
+
+      <!-- marcador A-->
+
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/covid_mkr1.patt"
+        smooth="true"
+        smoothCount="12"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+        cursor="fuse: true; rayOrigin: mouse;"
+        sound="src: #audio5; autoplay: false; on: markerFound"
+        emitevents="true"
+        id="markerA"
+      >
+        <a-plane
+          position="0 0 0.255"
+          rotation="-90 0 0"
+          geometry="width: 2.5; height: 1.5"
+        ></a-plane>
+
+        <a-image
+          id="S5_1"
+          src="#sprite5_1"
+          position="0.641 0.979 0.305"
+          rotation="-90 0 0"
+          scale="1 1 1"
+        ></a-image>
+        <a-image
+          id="S5_2"
+          src="#sprite5_2"
+          position="1.565 0.979 -0.255"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_3"
+          src="#sprite5_3"
+          position="1.607 0.979 0.508"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_4"
+          src="#sprite5_4"
+          position="1.226 0.979 1.135"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_5"
+          src="#sprite5_5"
+          position="0.451 0.979 1.233"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_6"
+          src="#sprite5_6"
+          position="-0.247 0.979 0.876"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_7"
+          src="#sprite5_7"
+          position="-0.698 0.979 0.242"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_8"
+          src="#sprite5_8"
+          position="-0.172 0.979 -0.548"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+        <a-image
+          id="S5_9"
+          src="#sprite5_9"
+          position="0.710 0.979 -0.612"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          material="opacity: 0"
+          animation="property: material.opacity; to: 1; dur: 1000; easing: linear; loop: true; autoplay: true; dir: alternate"
+        ></a-image>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

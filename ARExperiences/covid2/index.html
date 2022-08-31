@@ -1,1 +1,206 @@
-template
+<!DOCTYPE html>
+
+<!-- POSTER COVID 2 -->
+
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      loading-screen="enabled: true;"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+    >
+      <!-- asset manager -->
+
+      <a-assets>
+        <audio
+          id="audio3"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/cubrebocas.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="audio4"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/gel.mp3"
+          preload="auto"
+        ></audio>
+        <img
+          id="sprite3_1"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_1.png"
+        />
+        <img
+          id="sprite3_2"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_2.png"
+        />
+        <img
+          id="sprite3_3"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_3.png"
+        />
+        <img
+          id="sprite3_4"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_4.png"
+        />
+        <img
+          id="sprite3_5"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_5.png"
+        />
+        <img
+          id="sprite3_6"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite3_6.png"
+        />
+        <img
+          id="sprite4_1"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite4_1.png"
+        />
+        <img
+          id="sprite4_2"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite4_2.png"
+        />
+        <img
+          id="sprite4_3"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/sprite4_3.png"
+        />
+      </a-assets>
+
+      <!-- marcador A-->
+
+      <a-marker
+        type="pattern"
+        preset="custom"
+        url="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/covid_mkr1.patt"
+        smooth="true"
+        smoothCount="12"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+        cursor="fuse: true; rayOrigin: mouse;"
+        sound="src: #audio3; autoplay: false; on: markerFound"
+        emitevents="true"
+        id="markerA"
+      >
+        <a-plane
+          position="0 0 0.255"
+          rotation="-90 0 0"
+          geometry="width: 2.5; height: 1.5"
+        ></a-plane>
+
+        <a-entity
+          id="carousel"
+          geometry="primitive: ring"
+          material="opacity: 0"
+          position="0.120 0 -0.018"
+          animation="property: rotation; to: 0 0 365; dur: 8000; easing: linear; loop: true; autoplay: true"
+        >
+          <a-image
+            id="S3_1"
+            src="#sprite3_1"
+            position="0 0.979 0.332"
+            rotation="-90 0 0"
+            scale="1 1 1"
+          >
+          </a-image>
+          <a-image
+            id="S3_2"
+            src="#sprite3_2"
+            position="0.792 0.529 0.332"
+            rotation="-35.58 90 -90"
+            scale="1 1 1"
+          >
+          </a-image>
+          <a-image
+            id="S3_3"
+            src="#sprite3_3"
+            position="0.752 -0.584 0.332"
+            rotation="34.754 90 -90"
+            scale="1 1 1"
+          >
+          </a-image>
+          <a-image
+            id="S3_4"
+            src="#sprite3_4"
+            position="0 -0.930 0.332"
+            rotation="-90 0 0"
+            scale="1 1 1"
+          >
+          </a-image>
+
+          <a-image
+            id="S3_5"
+            src="#sprite3_5"
+            position="-0.926 -0.533 0.332"
+            rotation="31.98 -90 90"
+            scale="1 1 1"
+          >
+          </a-image>
+          <a-image
+            id="S3_6"
+            src="#sprite3_6"
+            position="-0.792 0.597 0.332"
+            rotation="-35.094 -90 90"
+            scale="1 1 1"
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- MARCADOR B -->
+
+      <a-marker
+        type="pattern"
+        position="2 0 0"
+        preset="custom"
+        url="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pamale_SPRITES/covid_mkr3.patt"
+        smooth="true"
+        smoothCount="12"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+        cursor="fuse: true; rayOrigin: mouse;"
+        sound="src: #audio4; autoplay: false; on: markerFound"
+        emitevents="true"
+        id="markerB"
+      >
+        <a-plane
+          position="-0.132 0 0.255"
+          rotation="-90 0 0"
+          geometry="width: 2.5; height: 1.5"
+        ></a-plane>
+
+        <a-entity
+          id="carousel2"
+          geometry="primitive: ring"
+          material="opacity: 0"
+          position="-0.272 0 0.56"
+          animation="property: rotation; to: 0 0 365; dur: 8000; easing: linear; loop: true; autoplay: true"
+        >
+          <a-image
+            id="S4_1"
+            src="#sprite4_1"
+            position="0.02 1.033 -0.318"
+            rotation="-90 0 0"
+            scale="1 1 1"
+          ></a-image>
+          <a-image
+            id="S4_2"
+            src="#sprite4_2"
+            position="1.077 -0.697 -0.318"
+            rotation="30.833 90 -90"
+            scale="1 1 1"
+          ></a-image>
+          <a-image
+            id="S4_3"
+            src="#sprite4_3"
+            position="-0.992 -0.722 -0.318"
+            rotation="36.213 -90 90"
+            scale="1 1 1"
+          ></a-image>
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

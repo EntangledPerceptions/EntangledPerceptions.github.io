@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- Demo con modelo 3D humanoide y animacion compleja -->
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+    >
+      <!-- inicio de asset manager -->
+      <a-assets>
+        <a-asset-item
+          id="maid"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/MaidDemo.glb"
+        ></a-asset-item>
+
+        <img
+          id="poster"
+          src="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/Maid_Poster.png"
+        />
+      </a-assets>
+
+      <a-image
+        id="cover"
+        geometry="primitive:  plane;  width:  1.666"
+        rotation="-90 0 0"
+        position="1.831 0 0.882"
+        scale="2.8 2.8 1"
+        src="#poster"
+      ></a-image>
+
+      <!-- inicio de MARCADOR -->
+      <a-marker
+        id="marker"
+        type="pattern"
+        preset="custom"
+        smooth="true"
+        url="https://entangled-cors.herokuapp.com/https://storage.googleapis.com/entangled_p_testserver/pattern-logoEP.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <!-- inicio de EXPERIENCIA -->
+        <a-entity
+          id="model"
+          position="0 0.384 0.702"
+          rotation="-90 0 0"
+          scale="4 4 4"
+          gltf-model="#maid"
+          animation-mixer
+        ></a-entity>
+
+        <!-- fin de experiencia -->
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
